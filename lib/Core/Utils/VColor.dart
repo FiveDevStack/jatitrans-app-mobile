@@ -7,4 +7,5 @@ class VColor {
   static const Color undoneColors = Color(0xffFF2D55);
   static const Color monitorColors = Color(0xffFF2D55);
   static const Color upcomingColors = Color(0xff007AFF);
+  static const Color yellowColors = Color(0xFFFFD900);
 }

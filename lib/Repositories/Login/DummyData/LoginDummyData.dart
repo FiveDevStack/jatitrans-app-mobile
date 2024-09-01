@@ -6,7 +6,7 @@ class LoginDummyData {
     },
     "data": {
       "email": "xyz@gmail.com",
-      "fullName": "Razor Callahan",
+      "fullName": "Hafidth",
     }
   };
 }

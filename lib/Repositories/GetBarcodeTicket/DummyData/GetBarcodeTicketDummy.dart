@@ -1,3 +1,5 @@
+import 'package:jatitrans_app/Core/Utils/ImagesConstant.dart';
+
 class GetBarcodeTicketDummy {
   var getBarcodeTickerDummy = {
     "status": {"code": 200, "message": "Success"},
@@ -5,7 +7,7 @@ class GetBarcodeTicketDummy {
       "stationName": "Halte Pondok Indah",
       "transportationName": "transjakarta",
       "price": "5000",
-      "imageBarcode": "www.barcode.com",
+      "imageBarcode": ImagesConstant.qrCodeIcon,
       "status": "IN"
     }
   };

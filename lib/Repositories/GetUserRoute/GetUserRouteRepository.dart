@@ -38,9 +38,9 @@ class GetUserRouteRepository extends BaseServices {
             data.nextDestinationTime = element.nextDestinationTime;
             data.price = element.price;
             data.statusItem = element.statusItem;
-            data.toStationName = data.toStationName;
-            data.transportationId = data.transportationId;
-            data.transportationName = data.transportationName;
+            data.toStationName = element.toStationName;
+            data.transportationId = element.transportationId;
+            data.transportationName = element.transportationName;
 
             listUserRoute.add(data);
           },

@@ -38,8 +38,8 @@ class GetDetailRouteRepository extends BaseServices {
             data.nextDestinationTime = element.nextDestinationTime;
             data.price = element.price;
             data.toStationName = element.toStationName;
-            data.transportationId = data.transportationId;
-            data.transportationName = data.transportationName;
+            data.transportationId = element.transportationId;
+            data.transportationName = element.transportationName;
 
             stepRouteList.add(data);
           },

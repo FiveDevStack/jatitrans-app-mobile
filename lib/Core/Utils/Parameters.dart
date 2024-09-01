@@ -7,5 +7,4 @@ enum CacheManagerKey {
 enum ScreenKey {
   homePage,
   historyPage,
-  editPage,
 }

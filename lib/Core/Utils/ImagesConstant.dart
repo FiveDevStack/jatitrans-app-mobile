@@ -5,7 +5,13 @@ class ImagesConstant {
 
   // ICONS
   static const String failedIcon = "${_icons}failed-icon.png";
+  static const String appIcon = "${_icons}app-icon.png";
+  static const String dotIcon = "${_icons}dot-icon.png";
+  static const String qrCodeIcon = "${_icons}qr-code-icon.png";
 
   // BACKGROUND
-  static const String miningBackground = "${_background}mining-app-bg.png";
+  static const String publicTransportBackground =
+      "${_background}public-transport-bg.png";
+  static const String fastTransportBackground =
+      "${_background}fast-transport-bg.png";
 }
