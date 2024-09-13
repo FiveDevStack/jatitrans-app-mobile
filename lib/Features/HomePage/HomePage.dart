@@ -88,7 +88,7 @@ class HomePage extends StatelessWidget {
                       width: 10,
                     ),
                     SizedBox(
-                      width: ConstantUtils.getFullWidth(context) * 0.4,
+                      width: ConstantUtils.getFullWidth(context) * 0.3,
                       child: Text(
                         controller.loginData.value.fullName ?? "",
                         style: const TextStyle(
@@ -114,7 +114,7 @@ class HomePage extends StatelessWidget {
                     decoration: BoxDecoration(
                         image: const DecorationImage(
                           image: AssetImage(
-                            ImagesConstant.fastTransportBackground,
+                            ImagesConstant.publicTransportBackground,
                           ),
                           fit: BoxFit.cover,
                         ),

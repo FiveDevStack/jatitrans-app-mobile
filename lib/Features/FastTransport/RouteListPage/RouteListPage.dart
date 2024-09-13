@@ -31,42 +31,44 @@ class RouteListPage extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(20.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CText(
-                  text: 'Choose your route',
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Obx(
-                  () => (_controller.getRouteDM.value.listRoute ?? [])
-                          .isNotEmpty
-                      ? ListView.builder(
-                          padding: const EdgeInsets.all(0),
-                          shrinkWrap: true,
-                          itemCount:
-                              _controller.getRouteDM.value.listRoute?.length,
-                          itemBuilder: (context, index) {
-                            var data =
-                                _controller.getRouteDM.value.listRoute?[index];
-                            return RouteCardItem(
-                              routeName: data?.routeName ?? "",
-                              distance: data?.distance ?? "",
-                              time: data?.time ?? "",
-                              price: data?.totalPrice ?? "",
-                              onTap: () {
-                                _controller.gotoRouteDetail(data);
-                              },
-                            );
-                          },
-                        )
-                      : const SizedBox(),
-                ),
-              ],
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CText(
+                    text: 'Choose your route',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Obx(
+                    () => (_controller.getRouteDM.value.listRoute ?? [])
+                            .isNotEmpty
+                        ? ListView.builder(
+                            padding: const EdgeInsets.all(0),
+                            shrinkWrap: true,
+                            itemCount:
+                                _controller.getRouteDM.value.listRoute?.length,
+                            itemBuilder: (context, index) {
+                              var data = _controller
+                                  .getRouteDM.value.listRoute?[index];
+                              return RouteCardItem(
+                                routeName: data?.routeName ?? "",
+                                distance: data?.distance ?? "",
+                                time: data?.time ?? "",
+                                price: data?.totalPrice ?? "",
+                                onTap: () {
+                                  _controller.gotoRouteDetail(data);
+                                },
+                              );
+                            },
+                          )
+                        : const SizedBox(),
+                  ),
+                ],
+              ),
             ),
           ),
           Obx(

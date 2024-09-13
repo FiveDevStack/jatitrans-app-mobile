@@ -13,6 +13,7 @@ class SettingLocationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var _controller = Get.put(SettingLocationPageController());
     return BaseWidgetContainer(
+      resizeToAvoidBottomInset: false,
       appBar: BaseAppBar.baseAppBar(
         context,
         title: const Text(
@@ -26,15 +27,15 @@ class SettingLocationPage extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
+                const Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Icon(Icons.location_on),
-                    const SizedBox(
+                    SizedBox(
                       width: 10,
                     ),
                     Expanded(
-                      child: const CText(
+                      child: CText(
                         text: 'Where you want to go? please let us know',
                         fontWeight: FontWeight.w500,
                         fontSize: 20,
@@ -54,6 +55,7 @@ class SettingLocationPage extends StatelessWidget {
                 ),
                 CTextInput(
                   textController: _controller.fromLocationController,
+                  maxLines: 1,
                 ),
                 const SizedBox(
                   height: 20,
@@ -67,11 +69,12 @@ class SettingLocationPage extends StatelessWidget {
                 ),
                 CTextInput(
                   textController: _controller.toLocationController,
+                  maxLines: 1,
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                Divider(),
+                const Divider(),
                 const CText(
                   text: 'Your Reference Price (Rp) - Optional',
                   fontWeight: FontWeight.bold,
@@ -83,6 +86,7 @@ class SettingLocationPage extends StatelessWidget {
                   textController: _controller.priceController,
                   keyboardType: TextInputType.number,
                   prefixText: 'Rp. ',
+                  maxLines: 1,
                 ),
                 const SizedBox(
                   height: 20,
