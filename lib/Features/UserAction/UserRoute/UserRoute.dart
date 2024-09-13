@@ -29,129 +29,127 @@ class UserRoute extends StatelessWidget {
           Padding(
             padding:
                 const EdgeInsets.only(left: 20, right: 20, bottom: 5, top: 5),
-            child: SingleChildScrollView(
-              physics: const NeverScrollableScrollPhysics(),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                        color: VColor.secondaryColors,
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Row(
-                      children: [
-                        const Icon(
-                          Icons.location_pin,
-                          color: Colors.white,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                      color: VColor.secondaryColors,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Row(
+                    children: [
+                      const Icon(
+                        Icons.location_pin,
+                        color: Colors.white,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Obx(
+                        () => CText(
+                          text: _controller.userRoute.value.routeName ?? "-",
+                          fontWeight: FontWeight.bold,
+                          textColor: Colors.white,
                         ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        Obx(
-                          () => CText(
-                            text: _controller.userRoute.value.routeName ?? "-",
-                            fontWeight: FontWeight.bold,
-                            textColor: Colors.white,
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                      color: VColor.undoneColors,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Row(
+                    children: [
+                      const Icon(
+                        Icons.watch_later,
+                        color: Colors.white,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Obx(
+                        () => CText(
+                          text: Helpers().convertToHoursMinutes(
+                            _controller.userRoute.value.totalTime ?? "00:00:00",
                           ),
+                          fontWeight: FontWeight.bold,
+                          textColor: Colors.white,
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                  const SizedBox(
-                    height: 10,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                      color: VColor.upcomingColors,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Row(
+                    children: [
+                      const Icon(
+                        Icons.location_city,
+                        color: Colors.white,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Obx(
+                        () => CText(
+                          text:
+                              "${_controller.userRoute.value.distance ?? "0.0"} Km",
+                          textColor: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
-                  Container(
-                    padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                        color: VColor.undoneColors,
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Row(
-                      children: [
-                        const Icon(
-                          Icons.watch_later,
-                          color: Colors.white,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                      color: VColor.doneColors,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Row(
+                    children: [
+                      const Icon(
+                        Icons.wallet,
+                        color: Colors.white,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Obx(
+                        () => CText(
+                          text:
+                              "Rp.${Helpers().reformatAmount(int.parse(_controller.userRoute.value.totalPrice ?? "0"))}",
+                          textColor: Colors.white,
+                          fontWeight: FontWeight.bold,
                         ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        Obx(
-                          () => CText(
-                            text: Helpers().convertToHoursMinutes(
-                              _controller.userRoute.value.totalTime ??
-                                  "00:00:00",
-                            ),
-                            fontWeight: FontWeight.bold,
-                            textColor: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                        color: VColor.upcomingColors,
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Row(
-                      children: [
-                        const Icon(
-                          Icons.location_city,
-                          color: Colors.white,
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        Obx(
-                          () => CText(
-                            text:
-                                "${_controller.userRoute.value.distance ?? "0.0"} Km",
-                            textColor: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                        color: VColor.doneColors,
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Row(
-                      children: [
-                        const Icon(
-                          Icons.wallet,
-                          color: Colors.white,
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        Obx(
-                          () => CText(
-                            text:
-                                "Rp.${Helpers().reformatAmount(int.parse(_controller.userRoute.value.totalPrice ?? "0"))}",
-                            textColor: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  const Divider(),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Obx(
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Divider(),
+                const SizedBox(
+                  width: 10,
+                ),
+                Expanded(
+                  child: Obx(
                     () => (_controller.userRoute.value.stepRouteList ?? [])
                             .isNotEmpty
                         ? ListView.builder(
@@ -159,9 +157,8 @@ class UserRoute extends StatelessWidget {
                               top: 10,
                               left: 10,
                               right: 10,
-                              bottom: 100,
+                              bottom: 20,
                             ),
-                            shrinkWrap: true,
                             itemCount: _controller
                                 .userRoute.value.stepRouteList?.length,
                             itemBuilder: (context, index) {
@@ -186,9 +183,9 @@ class UserRoute extends StatelessWidget {
                             },
                           )
                         : const SizedBox(),
-                  )
-                ],
-              ),
+                  ),
+                )
+              ],
             ),
           ),
           Obx(

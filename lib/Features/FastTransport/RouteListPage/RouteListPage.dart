@@ -31,24 +31,28 @@ class RouteListPage extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(20.0),
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CText(
-                    text: 'Choose your route',
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Obx(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CText(
+                  text: 'Choose your route',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Expanded(
+                  child: Obx(
                     () => (_controller.getRouteDM.value.listRoute ?? [])
                             .isNotEmpty
                         ? ListView.builder(
-                            padding: const EdgeInsets.all(0),
-                            shrinkWrap: true,
+                            padding: const EdgeInsets.only(
+                              top: 10,
+                              left: 10,
+                              right: 10,
+                              bottom: 30,
+                            ),
                             itemCount:
                                 _controller.getRouteDM.value.listRoute?.length,
                             itemBuilder: (context, index) {
@@ -67,8 +71,8 @@ class RouteListPage extends StatelessWidget {
                           )
                         : const SizedBox(),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
           Obx(
